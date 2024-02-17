@@ -27,3 +27,5 @@ class Estudiante(Persona):
 estudiante1 = Estudiante("Gabriela", 29, "Maestría")
 estudiante1.saludar()
 estudiante1.estudiar()
+
+
