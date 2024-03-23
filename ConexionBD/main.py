@@ -6,7 +6,7 @@ os.system('cls')
 
 #conectar bd
 
-conex = dao.Connection("localhost", "root", "", "dbregisters")
+conex = dao.Connection("localhost", "root", "", "bdregisters")
 conex.connect()
 
 #instanciar dao
