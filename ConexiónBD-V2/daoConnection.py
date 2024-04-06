@@ -28,7 +28,7 @@ class Connection:
         result = cursor.fetchall()
         cursor.close()
         return result
-
+    
 class DaoCity:
     def __init__(self, connection):
         self.connection = connection
@@ -40,7 +40,7 @@ class DaoCity:
     def get_by_id(self, id):
         query = 'SELECT * FROM cities WHERE id = %s'
         return self.connection.execute_read_query(query, (id,))
-
+    
     def insert(self, city):
         query = 'INSERT INTO cities (name, status) VALUES (%s, %s)'
         return self.connection.execute_query(query, (city.name, city.status))
@@ -52,3 +52,5 @@ class DaoCity:
     def delete(self, id):
         query = 'DELETE FROM cities WHERE id = %s'
         return self.connection.execute_query(query, (id,))
+    
+    

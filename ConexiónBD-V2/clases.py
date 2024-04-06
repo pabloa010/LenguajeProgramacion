@@ -5,8 +5,7 @@ class City:
 
     def __str__(self):
         return self.name
-
-
+    
 class Job:
     def __init__(self, name, status):
         self.name = name
@@ -44,3 +43,5 @@ class Employee:
     
     def set_status(self, status):
         self.status = status
+
+    
