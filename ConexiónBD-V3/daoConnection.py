@@ -46,11 +46,17 @@ class DaoCity:
         return self.connection.execute_query(query, (city.name, city.status))
     
     def update(self, city):
-        query = 'UPDATE cities SET name = %s, status = %s WHERE id = %s'
-        return self.connection.execute_query(query, (city.name, city.status, city.id))
+        query = 'UPDATE cities SET name = %s WHERE id = %s'
+        return self.connection.execute_query(query, (city.id, city.name))
     
     def delete(self, id):
         query = 'DELETE FROM cities WHERE id = %s'
         return self.connection.execute_query(query, (id,))
+    
+    def search(self, name):
+        query = 'SELECT * FROM cities WHERE name = %s'
+        return self.connection.execute_read_query(query, (name,))
+    
+
     
     

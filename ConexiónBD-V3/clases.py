@@ -1,10 +1,11 @@
 class City:
-    def __init__(self, name, status):
+    def __init__(self, name, id, status=1):
         self.name = name
         self.status = status
+        self.id = id
 
     def __str__(self):
-        return self.name
+        return f"{self.name}, {self.status}, {self.id}"
     
 class Job:
     def __init__(self, name, status):

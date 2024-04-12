@@ -1,4 +1,5 @@
 import os
+import sys
 import daoConnection as dao
 import clases as c
 
@@ -21,9 +22,10 @@ def mostrar():
 def editar():
     id_ciudad = int(input("Por favor, ingrese el ID de la ciudad que desea editar: "))
     nuevo_nombre = input("Por favor, ingrese el nuevo nombre que se asignará a la ciudad: ")
-    ciudad = c.City(nuevo_nombre, 1, id_ciudad)
+    nueva_ciudad = c.City(id_ciudad, nuevo_nombre, 1)
+    print(nueva_ciudad)
     daoCity = dao.DaoCity(conex)
-    daoCity.update(ciudad)
+    daoCity.update(nueva_ciudad)
 
 def eliminar():
     id_ciudad = int(input("Por favor, ingrese el ID de la ciudad que desea eliminar: "))
@@ -36,6 +38,10 @@ def buscar():
     cities = daoCity.search(nombre_ciudad)
     for city in cities:
         print(city)
+
+def salir():
+    print("Hasta pronto. ")
+    sys.exit()
 
 def menu():
     print("1. Insertar Ciudad")
@@ -65,6 +71,11 @@ def main():
         elif op == 5:
             buscar()
             os.system("pause")
+        elif op == 6:
+            salir()
+        else:
+            print("Por favor, verifica el número ingresado e intenta nuevamente ")
+import sys
 
 main()
 
