@@ -16,22 +16,22 @@ class Job:
         return self.name
     
 class Employee:
-    def __init__(self, first_name, last_name, city, job, salary, status):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.city = city
+    def __init__(self, id, nombre, ciudad, job, salary, status):
+        self.nombre = nombre
+        self.ciudad = ciudad
         self.job = job
         self.salary = salary
         self.status = status
+        self.id = id
     
     def __str__(self):
-        return self.first_name + ' ' + self.last_name
+        return self.nombre
     
     def get_full_name(self):
-        return self.first_name + ' ' + self.last_name
+        return self.nombre
     
     def get_city(self):
-        return self.city.name
+        return self.ciudad.name
     
     def get_job(self):
         return self.job.name
